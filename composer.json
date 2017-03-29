@@ -1,0 +1,24 @@
+{
+    "name": "superman2014/laravel-observer",
+    "description": "laravel model's observer",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liujingyu",
+            "email": "jingyu525@gmai.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload" : {
+        "psr-4": {
+            "Superman2014\\Observers\\" : "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+           "dev-master": "1.0-dev"
+        }
+    }
+}
