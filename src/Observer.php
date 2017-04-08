@@ -14,13 +14,14 @@ trait Observer
     public static function boot() {
         parent::boot();
 
-        $middle = strrpos(__CLASS__, '\\');
+        $rightpos = strrpos(__CLASS__, '\\');
+        $leftpos = strpos(__CLASS__, '\\');
 
-        $namespace = substr(__CLASS__, 0, $middle);
-        $observer = substr(__CLASS__, $middle + 1);
+        $namespace = substr(__CLASS__, 0, $leftpos);
+        $observer = substr(__CLASS__, $rightpos + 1);
 
         $observerClass = sprintf('%s\%s\%s', $namespace, 'Observers', $observer.'Observer');
 
-        self::observe(new $observerClass());
+        self::observe($observerClass);
     }
 }
