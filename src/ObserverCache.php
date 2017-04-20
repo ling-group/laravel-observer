@@ -6,11 +6,13 @@ use Cache;
 
 trait ObserverCache
 {
-	protected function clearCacheTags($tags) {
+    protected function clearCacheTags($tags)
+    {
 		Cache::tags($tags)->flush();
 	}
 
-	protected function forgetCache($tags, $id) {
+    protected function forgetCache($tags, $id)
+    {
 		Cache::tags($tags)->forget($id);
 	}
 

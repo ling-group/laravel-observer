@@ -5,14 +5,15 @@ namespace Superman2014\Observers;
 trait Observer
 {
 
-    public static function table() {
+    public static function table()
+    {
         $model = new static;
 
         return $model->getTable();
     }
 
-    public static function boot() {
-        parent::boot();
+    public static function bootObserver()
+    {
 
         $rightpos = strrpos(__CLASS__, '\\');
         $leftpos = strpos(__CLASS__, '\\');
